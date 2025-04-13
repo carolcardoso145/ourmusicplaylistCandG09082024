@@ -1,0 +1,120 @@
+<index.html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Minha Playlist</title>
+  <style>
+    body {
+      background-color: #121212;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 40px;
+    }
+
+    h1 {
+      margin-bottom: 10px;
+      font-size: 2.5em;
+    }
+
+    .description {
+      font-size: 1.1em;
+      margin-bottom: 30px;
+      color: #ccc;
+    }
+
+    .playlist-container {
+      max-width: 800px;
+      margin: 0 auto 30px;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    }
+
+    .featured-tracks {
+      max-width: 800px;
+      margin: 20px auto;
+      text-align: left;
+    }
+
+    .featured-tracks h2 {
+      margin-bottom: 10px;
+    }
+
+    .featured-tracks ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .featured-tracks li {
+      background: #1e1e1e;
+      margin-bottom: 8px;
+      padding: 12px 16px;
+      border-radius: 8px;
+      transition: background 0.3s;
+    }
+
+    .featured-tracks li:hover {
+      background: #2a2a2a;
+    }
+
+    .share-btn {
+      background-color: #1db954;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 24px;
+      cursor: pointer;
+      font-size: 1em;
+      margin-top: 20px;
+      transition: background 0.3s;
+    }
+
+    .share-btn:hover {
+      background-color: #1ed760;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Curta essa Playlist 🔊</h1>
+
+  <p class="description">Uma seleção especial de músicas para animar seu dia. Aperte o play e aproveite o som! 🎶</p>
+
+  <div class="playlist-container">
+    <iframe style="border-radius:12px" 
+      src="https://open.spotify.com/embed/playlist/4TdCmSxbq6Ok5Ch9ZdvxCv?utm_source=generator&theme=0" 
+      width="100%" 
+      height="352" 
+      frameborder="0" 
+      allowfullscreen="" 
+      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+      loading="lazy">
+    </iframe>
+  </div>
+
+  <div class="featured-tracks">
+    <h2>Músicas em destaque:</h2>
+    <ul>
+      <li>🎵 "Blinding Lights" - The Weeknd</li>
+      <li>🎵 "Levitating" - Dua Lipa</li>
+      <li>🎵 "Peaches" - Justin Bieber ft. Daniel Caesar, Giveon</li>
+    </ul>
+  </div>
+
+  <button class="share-btn" onclick="compartilhar()">Compartilhar Playlist</button>
+
+  <script>
+    function compartilhar() {
+      const url = "https://open.spotify.com/playlist/4TdCmSxbq6Ok5Ch9ZdvxCv";
+      navigator.clipboard.writeText(url).then(() => {
+        alert("Link da playlist copiado! 🔗");
+      }).catch(() => {
+        alert("Oops! Não foi possível copiar o link.");
+      });
+    }
+  </script>
+
+</body>
+</html>
